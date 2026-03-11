@@ -1,21 +1,17 @@
 import request from "supertest";
 import app from "../..";
-
-import { describe, expect, it, jest, mock } from "bun:test";
 import { prisma } from "../config/db.config";
 
-mock.module("../config/db.config", () => {
-  return {
-    prisma: {
-      todo: {
-        create: jest.fn(),
-        update: jest.fn(),
-        delete: jest.fn(),
-        findFirst: jest.fn(),
-      },
+jest.mock("../config/db.config", () => ({
+  prisma: {
+    todo: {
+      create: jest.fn(),
+      update: jest.fn(),
+      delete: jest.fn(),
+      findFirst: jest.fn(),
     },
-  };
-});
+  },
+}));
 
 describe("Todo Post Request /api/v1/todos/", () => {
   it("should create a todo item", async () => {
