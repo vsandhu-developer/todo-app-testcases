@@ -1,13 +1,11 @@
 name: CD
 
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types: ["completed"]
+  push:
+    branches: [main]
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +18,5 @@ jobs:
           script: |
             cd /landing-page
             git pull origin main
-            npm install
-            npm run build
+            bun install
             pm2 restart landing-page
