@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "bun index.ts"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.0",
