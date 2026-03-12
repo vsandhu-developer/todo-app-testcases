@@ -15,7 +15,7 @@ app.use(urlencoded({ extended: false }));
 app.use(RouteHandler);
 
 app.get("/", (req: Request, res: Response) => {
-  res.json({ message: "Up & Running." });
+  res.json({ message: "Up & Running" });
 });
 
 app.get("/deployment", (req: Request, res: Response) => {
