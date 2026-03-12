@@ -18,6 +18,8 @@ app.get("/", (req: Request, res: Response) => {
   res.json({ message: "Up & Running" });
 });
 
+// redeploy check
+
 app.get("/deployment", (req: Request, res: Response) => {
   res.json({ message: "CI/CD CHECK", status: 200 });
 });
