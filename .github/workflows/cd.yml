@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_KEY }}
           script: |
-            cd /landing-page
+            cd /todo-app-testcases
             git pull origin main
             bun install
             pm2 restart landing-page
